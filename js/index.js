@@ -14,7 +14,7 @@ const generateTitleLinks = () => {
     /* remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
-    console.log(titleList);
+
     /* for each article */
     const articles = document.querySelectorAll(optArticleSelector);
 
@@ -30,7 +30,6 @@ const generateTitleLinks = () => {
 
         /* create HTML of the link */
         const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
-        console.log(linkHTML);
 
         /* insert link into titleList */
         titleList.insertAdjacentHTML("beforeend", linkHTML);
@@ -94,21 +93,25 @@ function generateTags(){
         let html = '';
 
         /* get tags from data-tags attribute */
-        const articleTags = optArticleSelector.getAttribute('data-tags');
+        const articleTags = article.getAttribute('data-tags');
 
         /* split tags into array */
         const articleTagsArray = articleTags.split(' ');
+		console.log(articleTagsArray)
 
-            /* START LOOP: for each tag */
-            
+		/* START LOOP: for each tag */
+		for(let tag of articleTagsArray){
+
             /* generate HTML of the link */
-            
+            let html = `<li><a href="#tag-${tag}">${tag}&nbsp;<br></a></li>`;
+			console.log(html)
+
             /* add generated code to html variable */
-            
-            /* END LOOP: for each tag */
-        
-        /* insert HTML of all the links into the tags wrapper */
-        
+			/* insert HTML of all the links into the tags wrapper */
+			tagsWrapper.insertAdjacentHTML("beforeend", html);
+			/* END LOOP: for each tag */
+		}
+
         /* END LOOP: for every article: */
     }
     
