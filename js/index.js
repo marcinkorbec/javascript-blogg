@@ -1,5 +1,7 @@
 'use strict';
+
 /*------------------- CONSTANTS -------------------*/
+
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
@@ -59,6 +61,7 @@ const titleClickHandler = function(event) {
 
     /* remove class 'active' from all articles */
 	const activeArticles = document.querySelectorAll('.posts .active');
+
 	for(let activeArticle of activeArticles){
 		activeArticle.classList.remove('active');
 	}
@@ -108,7 +111,6 @@ function generateTags() {
 			tagsWrapper.insertAdjacentHTML("beforeend", html);
 			/* END LOOP: for each tag */
 		}
-
         /* END LOOP: for every article: */
     }
     
