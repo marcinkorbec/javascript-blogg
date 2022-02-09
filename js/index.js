@@ -49,6 +49,7 @@ const titleClickHandler = function(event) {
 
     /* remove class 'active' from all article links */
 	const activeLinks = document.querySelectorAll('.titles a.active');
+    
 	for(let activeLink of activeLinks){
 		activeLink.classList.remove('active');
 	}
