@@ -1,9 +1,9 @@
 'use strict';
 /*------------------- CONSTANTS -------------------*/
 const optArticleSelector = '.post',
-    optTitleSelector = '.post-title',
-    optTitleListSelector = '.titles',
-    optArticleTagsSelector = '.post-tags .list';
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles',
+  optArticleTagsSelector = '.post-tags .list';
 
 
 /*----------------- LEFT COLUMN -------------------*/
@@ -78,14 +78,11 @@ for(let link of links){
 
 /*---------------------- TAGS UNDER ARTICLE --------------------*/
 
-function generateTags(){
-
-    /* find all articles */
-    const articles = document.querySelectorAll(optArticleSelector);
-
-    /* START LOOP: for every article: */
-    for (let article of articles) {   
-
+function generateTags() {
+  /* find all articles */
+  const articles = document.querySelectorAll(optArticleSelector);
+  /* START LOOP: for every article: */
+  for (let article of articles) {
         /* find tags wrapper */
         const tagsWrapper = article.querySelector(optArticleTagsSelector);
 
