@@ -49,7 +49,7 @@ const titleClickHandler = function(event) {
 
     /* remove class 'active' from all article links */
 	const activeLinks = document.querySelectorAll('.titles a.active');
-    
+
 	for(let activeLink of activeLinks){
 		activeLink.classList.remove('active');
 	}
@@ -102,7 +102,6 @@ function generateTags() {
 
             /* generate HTML of the link */
             let html = `<li><a href="#tag-${tag}"><p>${tag}</p></a></li>`;
-			console.log(html)
 
             /* add generated code to html variable */
 			/* insert HTML of all the links into the tags wrapper */
