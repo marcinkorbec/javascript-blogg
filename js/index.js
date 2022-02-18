@@ -98,7 +98,6 @@ function generateTags() {
 
         /* split tags into array */
         const articleTagsArray = articleTags.split(' ');
-		console.log(articleTagsArray)
 
 		/* START LOOP: for each tag */
 		for(let tag of articleTagsArray){
@@ -131,11 +130,13 @@ function tagClickHandler(event){
 
     /* make a new constant "tag" and extract tag from the "href" constant */
     const tag =  href.replace('#tag-', '');
-
+	console.log(href)
     /* find all tag links with class active */
-    
+    const tagLinks = document.querySelectorAll()
+
     /* START LOOP: for each active tag link */
-    
+
+
     /* remove class active */
     
     /* END LOOP: for each active tag link */
@@ -151,8 +152,10 @@ function tagClickHandler(event){
     /* execute function "generateTitleLinks" with article selector as argument */
 	generateTitleLinks(`[data-tags~="${tag}]`)
 }
-    
-    function addClickListenersToTags(){
+
+tagClickHandler()
+
+function addClickListenersToTags(){
     
     /* find all links to tags */
     
@@ -166,3 +169,29 @@ function tagClickHandler(event){
 }
 
 addClickListenersToTags();
+
+// function generateTags(){
+// 	/* [NEW] create a new variable allTags with an empty array */
+// 	let allTags = [];
+// 	/* find all articles */
+// 	/* START LOOP: for every article: */
+// 	/* find tags wrapper */
+// 	/* make html variable with empty string */
+// 	/* get tags from data-tags attribute */
+// 	/* split tags into array */
+// 	/* START LOOP: for each tag */
+// 	/* generate HTML of the link */
+// 	/* add generated code to html variable */
+// 	/* [NEW] check if this link is NOT already in allTags */
+// 	if(allTags.indexOf(linkHTML) == -1){
+// 		/* [NEW] add generated code to allTags array */
+// 		allTags.push(linkHTML);
+// 	}
+// 	/* END LOOP: for each tag */
+// 	/* insert HTML of all the links into the tags wrapper */
+// 	/* END LOOP: for every article: */
+// 	/* [NEW] find list of tags in right column */
+// 	const tagList = document.querySelector('.tags');
+// 	/* [NEW] add html from allTags to tagList */
+// 	tagList.innerHTML = allTags.join(' ');
+// }
