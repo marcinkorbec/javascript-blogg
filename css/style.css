@@ -45,10 +45,12 @@ body {
 
 .sidebar {
 	flex: 1 0 0;
+    box-shadow: 0 0 1em silver;
 }
 
 .posts {
 	flex: 2 0 0;
+    box-shadow: 0 0 1em silver;
 }
 
 .sidebar,
