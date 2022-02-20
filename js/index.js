@@ -85,8 +85,10 @@ for(let link of links){
 function generateTags() {
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
+
   /* START LOOP: for every article: */
   for (let article of articles) {
+
         /* find tags wrapper */
         const tagsWrapper = article.querySelector(optArticleTagsSelector);
 
@@ -112,12 +114,14 @@ function generateTags() {
 		}
         /* END LOOP: for every article: */
     }
-    
 }
     
 generateTags();
 
-function tagClickHandler(event){
+
+/*--------- DISPLAYING left-SIDE ARTICLES AFTER CLICKING ON TAG -----------*/
+
+function tagClickHandler(event) {
 
     /* prevent default action for this event */
     event.preventDefault();
@@ -130,7 +134,6 @@ function tagClickHandler(event){
 
     /* make a new constant "tag" and extract tag from the "href" constant */
     const tag =  href.replace('#tag-', '');
-	console.log(href);
 
     /* find all tag links with class active */
     const tagLinks = document.querySelectorAll()
