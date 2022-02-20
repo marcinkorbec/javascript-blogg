@@ -10,7 +10,7 @@ const optArticleSelector = '.post',
 
 /*----------------- LEFT COLUMN -------------------*/
 
-// const generateTitleLinks = (customSelector = '') => {
+const generateTitleLinks = (customSelector = '') => {
     console.log('Generate title links działa.');
 
     /* remove contents of titleList */
