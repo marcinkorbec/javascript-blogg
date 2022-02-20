@@ -83,11 +83,11 @@ for(let link of links){
 /*---------------------- TAGS UNDER ARTICLE --------------------*/
 
 function generateTags() {
-  /* find all articles */
-  const articles = document.querySelectorAll(optArticleSelector);
+    /* find all articles */
+    const articles = document.querySelectorAll(optArticleSelector);
 
-  /* START LOOP: for every article: */
-  for (let article of articles) {
+    /* START LOOP: for every article: */
+    for (let article of articles) {
 
         /* find tags wrapper */
         const tagsWrapper = article.querySelector(optArticleTagsSelector);
