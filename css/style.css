@@ -51,12 +51,10 @@ body {
 
 .sidebar {
 	flex: 1 0 0;
-    box-shadow: 0 0 1em gray;
 }
 
 .posts {
 	flex: 2 0 0;
-    box-shadow: 0 0 1em gray;
 }
 
 .sidebar,
@@ -66,6 +64,7 @@ body {
 	padding: 40px;
 	border: 1px solid #444;
 	border-radius: 5px;
+    box-shadow: 0 0 1em black;
 }
 
 
