@@ -121,58 +121,66 @@ generateTags();
 
 /*--------- DISPLAYING left-SIDE ARTICLES AFTER CLICKING ON TAG -----------*/
 
-function tagClickHandler(event) {
+function tagClickHandler(event){
 
-    /* prevent default action for this event */
-    event.preventDefault();
+	/* prevent default action for this event */
+	event.preventDefault();
 
-    /* make new constant named "clickedElement" and give it the value of "this" */
-    const clickedElement = this;
+	/* make new constant named "clickedElement" and give it the value of "this" */
+	const clickedElement = this;
 
-    /* make a new constant "href" and read the attribute "href" of the clicked element */
-    const href = this.getAttribute('href')
+	/* make a new constant "href" and read the attribute "href" of the clicked element */
+	const href = clickedElement.getAttribute('href');
 
-    /* make a new constant "tag" and extract tag from the "href" constant */
-    const tag =  href.replace('#tag-', '');
+	/* make a new constant "tag" and extract tag from the "href" constant */
+	const tag = href.replace('#tag-', '');
 
-    /* find all tag links with class active */
-    const tagLinks = document.querySelectorAll()
+	/* find all tag links with class active */
+	const activeLinks = document.querySelectorAll('a[href="' + href + '"]');
 
-    /* START LOOP: for each active tag link */
+	/* START LOOP: for each active tag link */
+	for (let link of activeLinks) {
 
+		/* remove class active */
+		link.classList.remove('active');
 
-    /* remove class active */
-    
-    /* END LOOP: for each active tag link */
-    
-    /* find all tag links with "href" attribute equal to the "href" constant */
-    
-    /* START LOOP: for each found tag link */
-    
-    /* add class active */
-    
-    /* END LOOP: for each found tag link */
-    
-    /* execute function "generateTitleLinks" with article selector as argument */
-	generateTitleLinks(`[data-tags~="${tag}]`)
+		/* END LOOP: for each active tag link */
+	}
+
+	/* find all tag links with "href" attribute equal to the "href" constant */
+
+	const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
+	/* START LOOP: for each found tag link */
+
+	for (let tagLink of tagLinks){
+
+		/* add class active */
+		tagLink.classList.add('active');
+
+		/* END LOOP: for each found tag link */
+	}
+
+	/* execute function "generateTitleLinks" with article selector as argument */
+	generateTitleLinks('[data-tags~="' + tag + '"]');
+	console.log(generateTitleLinks);
 }
 
-tagClickHandler()
-
 function addClickListenersToTags(){
-    
-    /* find all links to tags */
-    
-    /* START LOOP: for each link */
-    
-    /* add tagClickHandler as event listener for that link */
-    
-    /* END LOOP: for each link */
+	/* find all links to tags */
+	const links = document.querySelectorAll('[href^="#tag-"]');
 
+	/* START LOOP: for each link */
+	for (let link of links) {
 
+		/* add tagClickHandler as event listener for that link */
+		link.addEventListener('click', tagClickHandler);
+
+		/* END LOOP: for each link */
+	}
 }
 
 addClickListenersToTags();
+
 
 // function generateTags(){
 // 	/* [NEW] create a new variable allTags with an empty array */
