@@ -9,12 +9,18 @@
 }
 
 body {
-	background: #fff;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #444;
+    height: 100vh;
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 1.7;
+    background: rgb(249,198,103); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(249,198,103,1) 0%, rgba(247,150,33,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(249,198,103,1) 0%,rgba(247,150,33,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(249,198,103,1) 0%,rgba(247,150,33,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c667', endColorstr='#f79621',GradientType=0 ); /* IE6-9 */
+
 }
 
 .container {
@@ -45,12 +51,12 @@ body {
 
 .sidebar {
 	flex: 1 0 0;
-    box-shadow: 0 0 1em silver;
+    box-shadow: 0 0 1em gray;
 }
 
 .posts {
 	flex: 2 0 0;
-    box-shadow: 0 0 1em silver;
+    box-shadow: 0 0 1em gray;
 }
 
 .sidebar,
@@ -71,10 +77,16 @@ body {
 	font-size: 104px;
 	line-height: 1;
 	text-align: center;
+    color: #444444;
+    text-shadow: 2px 2px 5px white;
 }
 
 
 /* Lists */
+a{
+    text-decoration: none;
+    color: black;
+}
 
 .list {
 	list-style-type: none;
