@@ -12,7 +12,7 @@ const optArticleSelector = '.post',
 
 /*----------------- LEFT COLUMN -------------------*/
 
-const generateTitleLinks = (customSelector = '') => {
+function generateTitleLinks(customSelector = '') {
     console.log('Generate title links działa.');
 
     /* remove contents of titleList */
@@ -38,6 +38,10 @@ const generateTitleLinks = (customSelector = '') => {
         /* insert link into titleList */
         titleList.insertAdjacentHTML("beforeend", linkHTML);
     }
+	const links = document.querySelectorAll('.titles a');
+	for (let link of links)	{
+		link.addEventListener('click', titleClickHandler);
+	}
 }
 generateTitleLinks();
 
@@ -46,7 +50,7 @@ generateTitleLinks();
 
 const links = document.querySelectorAll('.titles a');
 
-const titleClickHandler = function(event) {
+function titleClickHandler(event) {
     console.log('Klikanie działa.');
 	event.preventDefault();
 	const clickedElement = this;
@@ -231,7 +235,7 @@ function authorClickHandler(event){
 
 	/* find all author links with class active */
 	const authorLinks = document.querySelectorAll('a.active[href^="#author-"]');
-
+	console.log(authorLinks)
 	/* START LOOP: for each active author link */
 	for (let activeAuthorLink of authorLinks){
 
