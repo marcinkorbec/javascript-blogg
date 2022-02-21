@@ -112,7 +112,7 @@ function generateTags() {
 
             /* generate HTML of the link */
             let html = `<li><a href="#tag-${tag}"><p>${tag}</p></a></li>`;
-
+			console.log(html);
             /* add generated code to html variable */
 			/* insert HTML of all the links into the tags wrapper */
 			tagsWrapper.insertAdjacentHTML("beforeend", html);
@@ -207,10 +207,10 @@ function generateAuthors() {
 
 		authorsWrapper.innerHTML = '';
 		/* get autor from data-authors attribute */
-		const articleAuthors = authorsWrapper.getAttribute('data-author');
+		const articleAuthor = authorsWrapper.getAttribute('data-author');
 
 		/* generate HTML of the link */
-		const linkHTML = `<a href=#data-author="${articleAuthors}">${articleAuthors}</a>`;
+		const linkHTML = '<a href="#author-' + articleAuthor + '">' + articleAuthor + '</a>';
 
 		console.log(linkHTML)
 		/* add generated code to html variable */
