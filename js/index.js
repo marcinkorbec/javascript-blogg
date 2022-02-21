@@ -189,28 +189,30 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
+/*---------------------------- GENEROWANIE AUTORÓW --------------------------*/
+
 function generateAuthors() {
 
 	/* find all articles */
 	const articles = document.querySelectorAll(optArticleSelector);
-
 	/* START LOOP: for every article: */
 	for(let article of articles) {
 
 		/* find authors wrapper */
 		const authorsWrapper = article.querySelector(optArticleAuthorSelector);
-
 		/* make html variable with empty string */
-		let html = '';
 
+		let html = '';
 		/* change html for new links */
+
 		authorsWrapper.innerHTML = '';
 		/* get autor from data-authors attribute */
+		const articleAuthors = authorsWrapper.getAttribute('data-author');
 
-		const articleAuthors = article.getAttribute('data-author');
 		/* generate HTML of the link */
+		const linkHTML = `<a href=#data-author="${articleAuthors}">${articleAuthors}</a>`;
 
-		const linkHTML = '<a href="#author-' + articleAuthors + '">' + articleAuthors + '</a>';
+		console.log(linkHTML)
 		/* add generated code to html variable */
 		html = html + linkHTML;
 		authorsWrapper.innerHTML = html;
@@ -255,6 +257,7 @@ function authorClickHandler(event){
 	/* execute function "generateTitleLinks" with article selector as argument */
 	generateTitleLinks('[data-author="' + author + '"]');
 }
+
 
 // eslint-disable-next-line no-inner-declarations
 function addClickListenersToAuthor(){
