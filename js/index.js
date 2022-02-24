@@ -56,9 +56,7 @@ function titleClickHandler (event) {
 		activeArticle.classList.remove('active');
 	}
     const articleSelector = clickedElement.getAttribute('href');
-
     const targetArticle = document.querySelector(articleSelector);
-
     targetArticle.classList.add('active');
 }
 
@@ -70,35 +68,17 @@ for(let link of links){
 /*---------------------- TAGS UNDER ARTICLE --------------------*/
 
 function generateTags() {
-    /* find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
-
-    /* START LOOP: for every article: */
     for (let article of articles) {
-
-        /* find tags wrapper */
         const tagsWrapper = article.querySelector(optArticleTagsSelector);
-
-        /* make html variable with empty string */
         let html = '';
-
-        /* get tags from data-tags attribute */
         const articleTags = article.getAttribute('data-tags');
-
-        /* split tags into array */
         const articleTagsArray = articleTags.split(' ');
 
-		/* START LOOP: for each tag */
 		for(let tag of articleTagsArray){
-
-            /* generate HTML of the link */
             let html = `<li><a href="#tag-${tag}">${tag}&nbsp;&nbsp;</a></li>`;
-            /* add generated code to html variable */
-			/* insert HTML of all the links into the tags wrapper */
 			tagsWrapper.insertAdjacentHTML("beforeend", html);
-			/* END LOOP: for each tag */
 		}
-        /* END LOOP: for every article: */
     }
 }
     
