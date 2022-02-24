@@ -160,19 +160,12 @@ function authorClickHandler(event){
 }
 
 
-// eslint-disable-next-line no-inner-declarations
 function addClickListenersToAuthor(){
-
-	/* find all links to author */
 	const links = document.querySelectorAll('a[href^="#author-"]');
 
-	/* START LOOP: for each link */
 	for (let link of links) {
 		console.log(link);
-		/* add tagClickHandler as event listener for that link */
 		link.addEventListener('click', authorClickHandler);
-
-		/* END LOOP: for each link */
 	}
 }
 
